@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Prorject-cuoi-ky:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Prorject-cuoi-ky</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="ShopBongDen-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Prorject-cuoi-ky:war exploded" />
+    </root>
+  </artifact>
+</component>

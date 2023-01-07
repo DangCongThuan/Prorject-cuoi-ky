@@ -1,0 +1,128 @@
+/*@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');*/
+/**{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    outline: none;*/
+/*    box-sizing: border-box;*/
+/*    font-family: 'Poppins', sans-serif;*/
+/*}*/
+
+#login_section {
+    /*background-color: rgba(240, 240, 233, 0.3);*/
+}
+
+.center {
+    width: 100%;
+    margin: 0px auto 50px;
+    position: relative;
+    /*background-color: rgba(240, 240, 233, 0.69);*/
+}
+
+.container_login {
+    margin: 0 auto;
+}
+
+
+.container_login{
+    display: none;
+    background: #fff;
+    max-width: 610px;
+    width: auto;
+
+    padding: 30px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+.container_login{
+    display: block;
+}
+
+.container_login .text{
+    font-size: 26px;
+    font-weight: 400;
+    text-align: center;
+}
+.container_login form{
+    margin-top: -20px;
+}
+.container_login form .data{
+    height: 45px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.container_login form .forgot_text{
+    margin-bottom: -40px;
+}
+
+form .data label{
+    font-size: 16px;
+    font-weight: unset;
+}
+form .data input{
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 17px;
+    border: 1px solid silver;
+}
+form .data input:focus{
+    border-color: #3498db;
+    border-bottom-width: 2px;
+    outline: none;
+}
+form .forgot-pass{
+    margin-top: -8px;
+}
+form .forgot-pass a{
+    color: #3498db;
+    text-decoration: none;
+}
+form .forgot-pass a:hover{
+    text-decoration: underline;
+}
+form .btn_login{
+
+    margin: 24px 0;
+    height: 45px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #FE980F;
+}
+
+form .btn_login:hover {
+    scale: 0.99;
+    opacity: 0.9;
+}
+
+form .btn_login button{
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+form .signup-link{
+    text-align: center;
+}
+form .signup-link a{
+    color: #3498db;
+    text-decoration: none;
+}
+form .signup-link a:hover{
+    text-decoration: underline;
+}
+
+.checkbox_term span {
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
+form .checkbox_term a:hover{
+    text-decoration: underline;
+}

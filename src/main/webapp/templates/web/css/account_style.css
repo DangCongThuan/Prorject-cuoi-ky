@@ -1,0 +1,58 @@
+.account_div {
+    margin-top: 30px;
+}
+
+
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8
+}
+
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none;
+}
+
+.profile-button:hover {
+    background: #FE980F;
+    scale: 0.99;
+    opacity: 0.9;
+}
+
+.profile-button:focus {
+    background: #FE980F;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer
+}
+
+.labels {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 420;
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+
+.update-button {
+    margin-bottom: 30px;
+}
+
+.resetpass-link {
+
+}
