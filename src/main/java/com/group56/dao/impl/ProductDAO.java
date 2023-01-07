@@ -57,10 +57,10 @@ public class ProductDAO extends AbstractDAO<ProductModel> implements IProductDAO
 
     @Override
     public void update(ProductModel productUpdated) {
-        StringBuilder sql = new StringBuilder("UPDATE product SET product_name = ?, price = ?,");
+        StringBuilder sql = new StringBuilder("UPDATE product SET product_name = ?, price = ?, thumbnail = ?,");
         sql.append(" category_id = ?, status = ?, created_date = ?, created_by = ?,");
         sql.append(" modified_date = ?, modified_by = ?, description = ? Where product_id = ?");
-        update(sql.toString(), productUpdated.getName(), productUpdated.getPrice(),
+        update(sql.toString(), productUpdated.getName(), productUpdated.getPrice(), productUpdated.getThumbnail(),
                 productUpdated.getCategoryId(), productUpdated.getStatus(), productUpdated.getCreatedDate(),
                 productUpdated.getCreatedBy(), productUpdated.getModifiedDate(), productUpdated.getModifiedBy(), productUpdated.getDescription(),
                 productUpdated.getId());

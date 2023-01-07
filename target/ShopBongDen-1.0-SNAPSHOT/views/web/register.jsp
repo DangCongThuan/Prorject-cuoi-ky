@@ -38,7 +38,7 @@
                     <form id="userSubmitForm">
                         <div class="data">
                             <label for="fullName">Tên người dùng</label>
-                            <input type="text" name="fullName">
+                            <input type="text" id="fullName" name="fullName">
                         </div>
                         <div class="data">
                             <label for="email">Email</label>
@@ -49,7 +49,7 @@
                             <input type="password" name="password" id="password" required>
                         </div>
                         <div class="data">
-                            <label for="">Nhập lại mật khẩu</label>
+                            <label>Nhập lại mật khẩu</label>
                             <input type="password" name="passwordRepeated" id="passwordRepeated" required>
                         </div>
                         <div class="checkbox_term">
@@ -61,7 +61,7 @@
                             <button id="registerBtn" type="submit">Đăng ký</button>
                         </div>
                         <div class="signup-link">
-                            Đã có tài khoản? <a href="login.html">Đăng nhập ngay!</a></div>
+                            Đã có tài khoản? <a href="#">Đăng nhập ngay!</a></div>
                     </form>
                 </div>
             </div>

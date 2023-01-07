@@ -128,8 +128,6 @@ public class UploadDownloadFileServlet extends HttpServlet {
             }
         } catch (FileUploadException e) {
             System.out.println(e.getMessage());
-        } catch (Exception e) {
-            response.sendRedirect("/admin-san-pham?typeAction=edit&message=error_system");
         }
         response.sendRedirect("/admin-san-pham?typeAction=edit&message=insert_success");
     }

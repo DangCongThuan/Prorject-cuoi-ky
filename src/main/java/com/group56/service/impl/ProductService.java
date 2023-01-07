@@ -52,12 +52,15 @@ public class ProductService implements IProductService {
 
     @Override
     public ProductModel update(ProductModel productUpdated) {
-        CategoryModel categoryModel = categoryDao.findByName(productUpdated.getCategoryName());
+        CategoryModel categoryModel = new CategoryModel();
+        if (productUpdated.getCategoryId() == null) {
+        categoryModel = categoryDao.findByName(productUpdated.getCategoryName());
+        productUpdated.setCategoryId(categoryModel.getId());
+        }
         ProductModel oldModel = productDAO.findById(productUpdated.getId());
         productUpdated.setCreatedBy(oldModel.getCreatedBy());
         productUpdated.setCreatedDate(oldModel.getCreatedDate());
         productUpdated.setModifiedDate(new Timestamp(System.currentTimeMillis()));
-        productUpdated.setCategoryId(categoryModel.getId());
         productDAO.update(productUpdated);
         return productDAO.findById(productUpdated.getId());
     }
