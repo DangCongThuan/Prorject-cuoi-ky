@@ -61,7 +61,7 @@
                             <c:if test="${not empty USERMODEL}">
                                 <li><a href="#"><i class="fa fa-user"></i>Tài khoản, ${USERMODEL.fullName}</a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="cart.html"><i class="fa fa-edit"></i> Cài đặt</a></li>
+                                        <li><a href="<c:url value="/views/web/account.jsp"/>"><i class="fa fa-edit"></i> Cài đặt</a></li>
                                         <li><a href="<c:url value="/thoat?action=logout"/>"><i
                                                 class="fa fa-sign-out"></i> Thoát </a></li>
                                     </ul>

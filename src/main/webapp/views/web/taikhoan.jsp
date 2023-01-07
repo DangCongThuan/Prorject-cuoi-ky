@@ -56,17 +56,17 @@
       </div>
       <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
-          <h3 class="mb-4">Account Settings</h3>
+          <h3 class="mb-4">Cài đặt tài khoản</h3>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>First Name</label>
+                <label>Họ</label>
                 <input type="text" class="form-control" value="Kiran">
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Last Name</label>
+                <label>Tên</label>
                 <input type="text" class="form-control" value="Acharya">
               </div>
             </div>
@@ -78,7 +78,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label>Phone number</label>
+                <label>SDT</label>
                 <input type="text" class="form-control" value="+91 9876543215">
               </div>
             </div>

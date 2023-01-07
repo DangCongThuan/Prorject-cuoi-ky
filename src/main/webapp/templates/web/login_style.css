@@ -1,37 +1,76 @@
-body {
-    background: #f9f9f9;
-    font-family: "Roboto", sans-serif;
+
+/*---*/
+.main-content{
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0,0,0,.4);
+    margin: 5em auto;
+    display: flex;
+}
+.company__info{
+    background-color: #fe980f;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+.fa-lightbulb-o{
+    font-size:8em;
+}
+@media screen and (max-width: 640px) {
+    .main-content{width: 90%;}
+    .company__info{
+        display: none;
+    }
+    .login_form{
+        border-top-left-radius:20px;
+        border-bottom-left-radius:20px;
+    }
+}
+@media screen and (min-width: 642px) and (max-width:800px){
+    .main-content{width: 70%;}
 }
 
-.shadow {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+.login_form{
+    background-color: #fff;
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px;
+    border-top:1px solid #ccc;
+    border-right:1px solid #ccc;
 }
-
-.profile-tab-nav {
-    min-width: 250px;
+form{
+    padding: 0 2em;
 }
-
-.tab-content {
-    flex: 1;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.nav-pills a.nav-link {
-    padding: 15px 20px;
-    border-bottom: 1px solid #ddd;
+.form__input{
+    width: 100%;
+    border:0px solid transparent;
     border-radius: 0;
-    color: #333;
+    border-bottom: 1px solid #aaa;
+    padding: 1em .5em .5em;
+    padding-left: 2em;
+    outline:none;
+    margin:1.5em auto;
+    transition: all .5s ease;
 }
-.nav-pills a.nav-link i {
-    width: 20px;
+.form__input:focus{
+    border-bottom-color: #fe980f;
+    box-shadow: 0 0 5px rgba(0,80,80,.4);
+    border-radius: 4px;
 }
-
-.img-circle img {
-    height: 100px;
-    width: 100px;
-    border-radius: 100%;
-    border: 5px solid #fff;
+.btn{
+    transition: all .5s ease;
+    width: 70%;
+    border-radius: 30px;
+    color:#fe980f;
+    font-weight: 600;
+    background-color: #fff;
+    border: 1px solid #fe980f;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+.btn:hover, .btn:focus{
+    background-color: #fe980f;
+    color:#fff;
 }

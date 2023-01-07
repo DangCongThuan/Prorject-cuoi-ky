@@ -4,10 +4,13 @@ public class UserModel extends AbstractModel<UserModel> {
 
     private String email;
     private String phoneNumber;
+    private String fistName;
+    private String lastName;
     private String fullName;
     private String password;
     private String passwordRepeated;
     private String address;
+    private String city;
     private Integer status;
 
     private Long roleId;
@@ -93,5 +96,29 @@ public class UserModel extends AbstractModel<UserModel> {
 
     public void setCheckTerm(String checkTerm) {
         this.checkTerm = checkTerm;
+    }
+
+    public String getFistName() {
+        return fistName;
+    }
+
+    public void setFistName(String fistName) {
+        this.fistName = fistName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }
