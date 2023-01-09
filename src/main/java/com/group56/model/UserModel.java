@@ -4,18 +4,18 @@ public class UserModel extends AbstractModel<UserModel> {
 
     private String email;
     private String phoneNumber;
-    private String fistName;
+    private String firstName;
     private String lastName;
     private String fullName;
     private String password;
-    private String passwordRepeated;
+    private String confirmPassword;
     private String address;
     private String city;
     private Integer status;
 
     private Long roleId;
     private String checkTerm;
-
+    private String rememberMme;
     private RoleModel roleModel;
 
     public RoleModel getRoleModel() {
@@ -82,12 +82,12 @@ public class UserModel extends AbstractModel<UserModel> {
         this.roleId = roleId;
     }
 
-    public String getPasswordRepeated() {
-        return passwordRepeated;
+    public String getConfirmPassword() {
+        return confirmPassword;
     }
 
-    public void setPasswordRepeated(String passwordRepeated) {
-        this.passwordRepeated = passwordRepeated;
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 
     public String getCheckTerm() {
@@ -98,12 +98,12 @@ public class UserModel extends AbstractModel<UserModel> {
         this.checkTerm = checkTerm;
     }
 
-    public String getFistName() {
-        return fistName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -120,5 +120,13 @@ public class UserModel extends AbstractModel<UserModel> {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getRememberMme() {
+        return rememberMme;
+    }
+
+    public void setRememberMme(String rememberMme) {
+        this.rememberMme = rememberMme;
     }
 }

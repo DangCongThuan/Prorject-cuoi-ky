@@ -59,7 +59,7 @@
                                             <i class="fa fa-sign-in"></i> Đăng Nhập</a></li>
                             </c:if>
                             <c:if test="${not empty USERMODEL}">
-                                <li><a href="#"><i class="fa fa-user"></i>Tài khoản, ${USERMODEL.fullName}</a>
+                                <li><a href="#"><i class="fa fa-user"></i>Tài khoản, ${USERMODEL.firstName}</a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="<c:url value="/views/web/account.jsp"/>"><i class="fa fa-edit"></i> Cài đặt</a></li>
                                         <li><a href="<c:url value="/thoat?action=logout"/>"><i
@@ -77,7 +77,7 @@
     <div class="header-bottom"><!--header-bottom-->
         <div class="container">
             <div class="row">
-                <div class="col-sm-9">
+                <div class="col-sm-8">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse"
                                 data-target=".navbar-collapse">
@@ -111,9 +111,16 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="search_box pull-right">
-                        <input type="text" placeholder="Tìm kiếm"/>
+                <div class="col-sm-4">
+                    <div class=" pull-right">
+                        <form action="/danh-sach-san-pham" method="get" class="searchform">
+                            <label>
+                                <input id="searchBy" name="searchBy" type="text" placeholder="Tìm kiếm"/>
+                                <input type="hidden" id="typeAction" name="typeAction" value="search">
+                            </label>
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

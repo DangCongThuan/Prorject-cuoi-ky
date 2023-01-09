@@ -4,7 +4,7 @@
     width: 50%;
     border-radius: 20px;
     box-shadow: 0 5px 5px rgba(0,0,0,.4);
-    margin: 5em auto;
+    margin: 0 auto 5em;
     display: flex;
 }
 .company__info{
@@ -61,14 +61,14 @@ form{
 }
 .btn{
     transition: all .5s ease;
-    width: 70%;
+    /*width: 70%;*/
     border-radius: 30px;
     color:#fe980f;
     font-weight: 600;
     background-color: #fff;
     border: 1px solid #fe980f;
     margin-top: 1.5em;
-    margin-bottom: 1em;
+    /*margin-bottom: 1em;*/
 }
 .btn:hover, .btn:focus{
     background-color: #fe980f;

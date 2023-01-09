@@ -1,12 +1,22 @@
 package com.group56.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductModel extends AbstractModel<ProductModel> {
     private String name;
     private Long price;
     private String thumbnail;
     private String description;
+    private List<ProductImageModel> inforImages = new ArrayList<>();
+
+    public List<ProductImageModel> getInforImages() {
+        return inforImages;
+    }
+
+    public void setInforImages(List<ProductImageModel> inforImages) {
+        this.inforImages = inforImages;
+    }
 
     public String getDescription() {
         return description;

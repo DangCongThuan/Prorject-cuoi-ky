@@ -26,14 +26,15 @@ public class UserService implements IUserService {
         newUser.setCreatedDate(new Timestamp(System.currentTimeMillis()));
         newUser.setStatus(1);
         newUser.setRoleId(1L);
-        newUser.setCreatedBy(newUser.getFullName());
+        if (newUser.getId() == null) {
+            newUser.setFullName(newUser.getFirstName() + " " + newUser.getLastName());
+            newUser.setCreatedBy(newUser.getFullName());
+        }
         if (StringUtils.isAnyBlank(newUser.getEmail(), newUser.getPassword(), newUser.getFullName())) {
             newUser.setMessage("null_value");
         }
         if (iUserDao.checkExits(newUser.getEmail())) {
             newUser.setMessage("exits_object");
-        } else if (!newUser.getPassword().equals(newUser.getPasswordRepeated())) {
-            newUser.setMessage("pass_not_match");
         } else {
             Long productId = iUserDao.add(newUser);
             newUser = iUserDao.findById(productId);

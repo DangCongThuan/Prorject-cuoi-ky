@@ -7,8 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<link href=" <c:url value="/templates/web/css/bootstrap.min.css" />" rel="stylesheet">
-<link href=" <c:url value="/templates/web/css/font-awesome.min.css" />" rel="stylesheet">
+<link href=" <c:url value="/templates/commons/css/bootstrap.min.css" />" rel="stylesheet">
+<link href=" <c:url value="/templates/commons/css/font-awesome.css" />" rel="stylesheet">
 <link href=" <c:url value="/templates/web/css/prettyPhoto.css" />" rel="stylesheet">
 <link href=" <c:url value="/templates/web/css/price-range.css" />" rel="stylesheet">
 <link href=" <c:url value="/templates/web/css/animate.css" />" rel="stylesheet">

@@ -1,81 +1,99 @@
 <%--
   Created by IntelliJ IDEA.
   User: Pc
-  Date: 12/30/2022
-  Time: 1:45 PM
+  Date: 1/8/2023
+  Time: 12:18 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@include file="/commons/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/commons/taglib.jsp" %>
 <c:url var="userAPIurl" value="/api-user"/>
 <c:url var="registerUrl" value="/user-register"/>
 <c:url var="loginUrl" value="trang-chu"/>
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Đăng Ký | LIGHT</title>
-    <link href=" <c:url value="/templates/web/css/login_style.css" />" rel="stylesheet">
-</head><!--/head-->
-
+    <title>Title</title>
+    <link href=" <c:url value="/templates/web/register.css" />" rel="stylesheet">
+</head>
 <body>
-<section id="login_section">
+<div class="form-bg">
     <div class="container">
         <div class="row">
             <div class="breadcrumbs">
-                <ol class="breadcrumb">
-                    <li><a href="<c:url value="/trang-chu"/>">Trang chủ</a></li>
+                <ol class="breadcrumb" style="margin-bottom: 15px !important;">
+                    <li><a href="#">Trang chủ</a></li>
                     <li class="active">Đăng ký</li>
                 </ol>
             </div><!--/breadcrums-->
-            <div class="center">
-                <div class="container_login">
-                    <div class="text">Đăng ký</div>
-                    <c:if test="${not empty messageResponse}">
-                        <div class="alert alert-${alert}">
-                                ${messageResponse}
+            <div class="col-md-offset-2 col-md-8 form-container">
+                <h3 class="title">Đăng ký</h3>
+                <c:if test="${not empty messageResponse}">
+                    <div class="alert alert-${alert}">
+                            ${messageResponse}
+                    </div>
+                </c:if>
+                <form id="userForm" class="row form-horizontal">
+                    <div class="form-group">
+                        <label>Họ</label>
+                        <input id="firstName" name="firstName" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Tên</label>
+                        <input id="lastName" name="lastName" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <div class="row form-group">
+                            <label>Email</label>
+                            <input id="email" name="email" type="email" class="form-control">
                         </div>
-                    </c:if>
-                    <form id="userSubmitForm">
-                        <div class="data">
-                            <label for="fullName">Tên người dùng</label>
-                            <input type="text" id="fullName" name="fullName">
-                        </div>
-                        <div class="data">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" required>
-                        </div>
-                        <div class="data">
-                            <label for="password">Mật khẩu</label>
-                            <input type="password" name="password" id="password" required>
-                        </div>
-                        <div class="data">
-                            <label>Nhập lại mật khẩu</label>
-                            <input type="password" name="passwordRepeated" id="passwordRepeated" required>
-                        </div>
-                        <div class="checkbox_term">
-                            <input type="checkbox" name="checkTerm" id="check_term_btn" class="check_term_btn">
-                            <span>Bằng việc đăng kí tài khoản bạn đã, đồng ý với
-									<a href="#"> điều khoản sử dụng </a>của chúng tôi.</span>
-                        </div>
-                        <div class="btn_login">
-                            <button id="registerBtn" type="submit">Đăng ký</button>
-                        </div>
-                        <div class="signup-link">
-                            Đã có tài khoản? <a href="#">Đăng nhập ngay!</a></div>
-                    </form>
-                </div>
-            </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu</label>
+                        <input id="password" name="password" type="password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Nhập lại mật khẩu</label>
+                        <input id="confirmPassword" name="confirmPassword" type="password" class="form-control">
+                    </div>
+                    <h4 class="sub-title">Thông tin cá nhân</h4>
+                    <div class="form-group">
+                        <label>SDT</label>
+                        <input name="phoneNumber" id="phoneNumber" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Thành phố</label>
+                        <input name="city" id="city" type="text" class="form-control">
+                        <%--                        <select class="form-control">--%>
+                        <%--                            <option value="paris">Paris</option>--%>
+                        <%--                            <option value="new york">New York</option>--%>
+                        <%--                        </select>--%>
+                    </div>
+
+                    <div STYLE="width: 100%" class="row form-group">
+                        <label>Địa chỉ chi tiết</label>
+                        <input style="width: 100%" id="address" name="address" type="text" class="form-control">
+                    </div>
+                    <div class="check-terms">
+                        <input id="checkTerm" name="checkTerm" type="checkbox" class="checkbox">
+                        <span class="check-label">Tôi đồng ý với các điều khoản</span>
+                    </div>
+                    <span class="signin-link">Đã có tài khoản? Nhấn vào đây để <a href="">Đăng nhập</a></span>
+                    <button id="registerBtn" class="btn signup">Đăng ký</button>
+                </form>
+            </div><!--/register-->
         </div>
     </div>
-</section>
+</div>
+</div>
 <script>
     $('#registerBtn').click(function (e) {
         e.preventDefault();
         var data = {};
-        var formData = $('#userSubmitForm').serializeArray();
+        var formData = $('#userForm').serializeArray();
         $.each(formData, function (i, v) {
             data["" + v.name + ""] = v.value;
         });
+        console.log(data);
         addUser(data);
     });
 
@@ -87,11 +105,11 @@
             data: JSON.stringify(data),
             dataType: 'json',
             success: function (result) {
-                    if (result.id == null) {
-                    window.location.href = "${registerUrl}?typeAction=register&message="+ result.message;
-                    } else {
-                        window.location.href = "${loginUrl}?action=login&message="+ result.message;
-                    }
+                if (result.id == null) {
+                    window.location.href = "${registerUrl}?typeAction=register&message=" + result.message;
+                } else {
+                    window.location.href = "${loginUrl}?action=login&message=" + result.message;
+                }
             },
             error: function (error) {
                 window.location.href = "${registerUrl}?typeAction=register&message=error_system";

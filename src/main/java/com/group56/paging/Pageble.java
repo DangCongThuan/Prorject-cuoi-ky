@@ -10,5 +10,5 @@ public interface Pageble {
     Integer getLimit();
 
     Sorter getSorter();
-
+    String getNameSearch();
 }

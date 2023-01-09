@@ -31,4 +31,9 @@ public class ProductImgService implements IProductImgService {
         }
         return result;
     }
+
+    @Override
+    public List<ProductImageModel> findByProduct(Long productId) {
+        return productImageDAO.findByProduct(productId, 1);
+    }
 }

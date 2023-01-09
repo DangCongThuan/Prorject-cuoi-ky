@@ -13,6 +13,7 @@ public class AbstractModel<T> {
 
     private String sortName;
     private String sortBy;
+    private String searchBy;
     private List<T> listResult = new ArrayList<>();
     private Integer page;
     private Integer maxPagesVisible;
@@ -150,5 +151,13 @@ public class AbstractModel<T> {
 
     public void setIds(Long[] ids) {
         this.ids = ids;
+    }
+
+    public String getSearchBy() {
+        return searchBy;
+    }
+
+    public void setSearchBy(String searchBy) {
+        this.searchBy = searchBy;
     }
 }

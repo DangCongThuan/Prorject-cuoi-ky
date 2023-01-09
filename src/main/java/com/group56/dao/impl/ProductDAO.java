@@ -13,12 +13,44 @@ public class ProductDAO extends AbstractDAO<ProductModel> implements IProductDAO
     public List<ProductModel> findAll(Pageble pageble) {
         StringBuilder sql = new StringBuilder("Select * from product p INNER JOIN category AS c ON p.category_id = c.category_id");
         if (pageble.getSorter() != null && !StringUtils.isAllBlank(pageble.getSorter().getSortBy(), pageble.getSorter().getSortName())) {
-            sql.append(" Order By " + pageble.getSorter().getSortName() + " " + pageble.getSorter().getSortBy() + "");
+            sql.append(" Order By p." + pageble.getSorter().getSortName() + " " + pageble.getSorter().getSortBy() + "");
         }
         if (pageble.getOffSet() != null && pageble.getLimit() != null) {
             sql.append(" Limit " + pageble.getOffSet() + ", " + pageble.getLimit() + "");
         }
         return query(sql.toString(), new ProductMapper());
+    }
+
+    @Override
+    public List<ProductModel> findInCategory(Pageble pageble) {
+        StringBuilder sql = new StringBuilder("Select * from product p INNER JOIN category AS c ON p.category_id = c.category_id");
+        sql.append(" Where category_name = ?");
+        if (pageble.getSorter() != null && !StringUtils.isAllBlank(pageble.getSorter().getSortBy(), pageble.getSorter().getSortName())) {
+            sql.append(" Order By " + pageble.getSorter().getSortName() + " " + pageble.getSorter().getSortBy() + "");
+        }
+        if (pageble.getOffSet() != null && pageble.getLimit() != null) {
+            sql.append(" Limit " + pageble.getOffSet() + ", " + pageble.getLimit() + "");
+        }
+        return query(sql.toString(), new ProductMapper(), pageble.getNameSearch());
+    }
+
+    @Override
+    public List<ProductModel> search(Pageble pageble) {
+        StringBuilder sql = new StringBuilder("Select * from product p INNER JOIN category AS c ON p.category_id = c.category_id");
+        sql.append(" WHERE INSTR(`product_name`, ?) > 0");
+        if (pageble.getSorter() != null && !StringUtils.isAllBlank(pageble.getSorter().getSortBy(), pageble.getSorter().getSortName())) {
+            sql.append(" Order By " + pageble.getSorter().getSortName() + " " + pageble.getSorter().getSortBy() + "");
+        }
+        if (pageble.getOffSet() != null && pageble.getLimit() != null) {
+            sql.append(" Limit " + pageble.getOffSet() + ", " + pageble.getLimit() + "");
+        }
+        return query(sql.toString(), new ProductMapper(), pageble.getNameSearch());
+    }
+
+    @Override
+    public int returnTotalItemsOfSearchName(String name) {
+        String sql = "Select count(*) from product p WHERE INSTR(`product_name`, ?) > 0";
+        return count(sql, name);
     }
 
     @Override
@@ -71,4 +103,12 @@ public class ProductDAO extends AbstractDAO<ProductModel> implements IProductDAO
         String sql = "Delete from product Where id = ?";
         update(sql, id);
     }
+
+    @Override
+    public int returnTotalItemsOfCategory(String name) {
+        String sql = "Select count(*) from product p INNER JOIN category AS c ON p.category_id = c.category_id where category_name = ?";
+        return count(sql, name);
+    }
+
+
 }

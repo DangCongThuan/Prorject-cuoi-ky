@@ -14,14 +14,17 @@ public class UserMapper implements IRowMapper<UserModel> {
             UserModel userModel = new UserModel();
             userModel.setId(rs.getLong("id"));
             userModel.setEmail(rs.getString("email"));
-            userModel.setPhoneNumber(rs.getString("phone_number"));
             userModel.setPassword(rs.getString("pass"));
-            userModel.setFullName(rs.getString("full_name"));
+            userModel.setPhoneNumber(rs.getString("phone_number"));
             userModel.setAddress(rs.getString("address"));
-            userModel.setRoleId(rs.getLong("role_id"));
+            userModel.setFullName(rs.getString("full_name"));
             userModel.setStatus(rs.getInt("status"));
+            userModel.setRoleId(rs.getLong("role_id"));
             userModel.setCreatedDate(rs.getTimestamp("created_date"));
             userModel.setCreatedBy(rs.getString("created_by"));
+            userModel.setFirstName(rs.getString("first_name"));
+            userModel.setLastName(rs.getString("last_name"));
+            userModel.setCity(rs.getString("city"));
             try {
                 userModel.setModifiedBy(rs.getString("modified_by"));
                 userModel.setModifiedDate(rs.getTimestamp("modified_date"));

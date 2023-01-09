@@ -22,6 +22,14 @@ public class ProductService implements IProductService {
     public List<ProductModel> findAll(Pageble pageble) {
         return productDAO.findAll(pageble);
     }
+    public List<ProductModel> findInCategory(Pageble pageble) {
+        return productDAO.findInCategory(pageble);
+    }
+
+    @Override
+    public List<ProductModel> search(Pageble pageble) {
+        return productDAO.search(pageble);
+    }
 
     @Override
     public ProductModel add(ProductModel newProduct) {
@@ -44,6 +52,17 @@ public class ProductService implements IProductService {
     public int returnTotalItems() {
         return productDAO.returnTotalItems();
     }
+
+    @Override
+    public int returnTotalItemsOfcategory(String name) {
+        return productDAO.returnTotalItemsOfCategory(name);
+    }
+
+    @Override
+    public int returnTotalItemsOfSearchName(String name) {
+        return productDAO.returnTotalItemsOfSearchName(name);
+    }
+
 
     @Override
     public ProductModel findById(Long id) {

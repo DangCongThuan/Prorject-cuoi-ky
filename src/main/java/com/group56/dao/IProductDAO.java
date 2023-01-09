@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IProductDAO {
     List<ProductModel> findAll(Pageble pageble);
-
+    List<ProductModel> findInCategory(Pageble pageble);
     Long add(ProductModel newProduct);
 
     ProductModel findById(Long id);
@@ -21,4 +21,11 @@ public interface IProductDAO {
     void update(ProductModel productUpdated);
 
     void delete(Long id);
+
+
+    int returnTotalItemsOfCategory(String name);
+
+    List<ProductModel> search(Pageble pageble);
+
+    int returnTotalItemsOfSearchName(String name);
 }

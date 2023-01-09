@@ -11,10 +11,15 @@ public interface IProductService {
     ProductModel add(ProductModel newProduct);
 
     int returnTotalItems();
-
+    int returnTotalItemsOfcategory(String name);
+    int returnTotalItemsOfSearchName(String name);
     ProductModel findById(Long id);
 
     ProductModel update(ProductModel productUpdated);
 
     void delete(Long id);
+
+    List<ProductModel> findInCategory(Pageble pageble);
+    List<ProductModel> search(Pageble pageble);
+
 }

@@ -5,60 +5,65 @@
   Time: 1:45 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@include file="/commons/taglib.jsp"%>
+<%@include file="/commons/taglib.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
-  <title>Đăng Nhập | LIGHT</title>
-  <link href=" <c:url value="/templates/web/css/login_style.css" />" rel="stylesheet">
-</head><!--/head-->
-
+    <title>Trang đăng nhập</title>
+    <link href=" <c:url value="/templates/web/login_style.css" />" rel="stylesheet">
+</head>
 <body>
-
-
-<section id="login_section">
-  <div class="container">
+<div class="container">
     <div class="row">
-      <div class="breadcrumbs">
-        <ol class="breadcrumb">
-          <li><a href="#">Trang chủ</a></li>
-          <li class="active">Đăng nhập</li>
-        </ol>
-      </div><!--/breadcrums-->
-      <div class="center">
-
-        <div class="container_login">
-          <div class="text">Đăng nhập</div>
-          <c:if test="${not empty messageResponse}">
-            <div class="alert alert-${alert}">
-                ${messageResponse}
-            </div>
-          </c:if>
-
-          <form action="<c:url value="/dang-nhap"/>" id="formLogin" method="post">
-            <div class="data">
-              <label>Email</label>
-              <input type="email" name="email" required>
-            </div>
-            <div class="data">
-              <label>Mật khẩu</label>
-              <input type="password" name="password" required>
-            </div>
-            <div class="forgot-pass">
-              <a href="forgotpass.html">Quên mật khẩu?</a>
-            </div>
-            <div class="btn_login">
-              <input type="hidden" value="login" name="action" >
-              <button  type="submit">Đăng nhập</button>
-            </div>
-            <div class="signup-link">
-              Không có tài khoản? <a href="../../../register.html">Đăng ký ngay</a></div>
-          </form>
-        </div>
-      </div>
+        <div class="breadcrumbs">
+            <ol class="breadcrumb" style="margin-bottom: 15px !important;">
+                <li><a href="#">Trang chủ</a></li>
+                <li class="active">Đăng nhập</li>
+            </ol>
+        </div><!--/breadcrums-->
     </div>
-  </div>
-</section>
+    <div class="row main-content bg-success text-center">
+        <div class="col-md-4 text-center company__info">
+            <span class="company__logo"><h2><span class="fa fa-lightbulb-o"></span></h2></span>
+<%--            <h4 class="company_title">Your Company Logo</h4>--%>
+        </div>
+        <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+            <div class="container-fluid">
+                <div class="row">
+                    <h2>Log In</h2>
+                </div>
+                <div class="row">
+                    <c:if test="${not empty messageResponse}">
+                        <div class="alert alert-${alert}">
+                                ${messageResponse}
+                        </div>
+                    </c:if>
+
+                    <form action="<c:url value="/dang-nhap"/>" method="post" class="form-group">
+                        <div class="row">
+                            <input type="email" name="email" id="email" class="form__input"
+                                   placeholder="Email">
+                        </div>
+                        <div class="row">
+                            <!-- <span class="fa fa-lock"></span> -->
+                            <input type="password" name="password" id="password" class="form__input"
+                                   placeholder="Mật khẩu">
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" name="rememberMme" id="rememberMe" class="">
+                            <label for="rememberMe">Nhớ tôi đăng nhập</label>
+                        </div>
+                        <div class="row">
+                            <input type="hidden" value="login" name="action" >
+                            <input type="submit" value="Đăng nhập" class="btn">
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <p>Don't have an account? <a href="#">Register Here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
-</html>

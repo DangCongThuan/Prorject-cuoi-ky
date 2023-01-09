@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.group56.model.UserModel;
 import com.group56.service.IUserService;
 import com.group56.utils.HttpUtil;
+import com.group56.utils.SessionUtil;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -23,6 +24,9 @@ public class UserAPI extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("application/json");
         UserModel userModel = HttpUtil.of(req.getReader()).toModel(UserModel.class);
+        if (userModel.getId() != null) {
+            userModel.setCreatedBy(((UserModel) SessionUtil.getInstance().getValue(req, "USERMODEL")).getFullName());
+        }
         userModel = iUserService.add(userModel);
         objectMapper.writeValue(resp.getOutputStream(), userModel);
     }

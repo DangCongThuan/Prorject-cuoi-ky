@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<script src=" <c:url value="/templates/web/js/bootstrap.min.js" /> "></script>
+<script src=" <c:url value="/templates/commons/js/bootstrap.js" /> "></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 <script type="text/javascript" src=" <c:url value="/templates/web/js/gmaps.js" /> "></script>
 <script src=" <c:url value="/templates/web/js/contact.js" /> "></script>

@@ -11,6 +11,7 @@
 <head>
     <title>Title</title>
     <link href="<c:url value="/templates/account/form-account-style.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/templates/web/register.css" />" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -39,34 +40,53 @@
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 bhoechie-tab">
                 <!-- Tài khoaản -->
                 <div class="bhoechie-tab-content active">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Họ</label>
-                                <input type="text" class="form-control" value="${USERMODEL.fistName}">
-                            </div>
+                    <div style="padding-right: 15px; " class="row">
+                        <div style="padding-right: 15px;" class="col-md-12 form-container">
+                            <form id="userForm" class="row form-horizontal">
+                                <div class="form-group">
+                                    <label>Họ</label>
+                                    <input id="firstName" name="firstName" type="text" class="form-control"
+                                           value="${USERMODEL.firstName}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên</label>
+                                    <input id="lastName" name="lastName" type="text" class="form-control"
+                                           value="${USERMODEL.lastName}">
+                                </div>
+
+                                <div class="row form-group">
+                                    <label>Email</label>
+                                    <input id="email" name="email" type="email" class="form-control"
+                                           value="${USERMODEL.email}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Mật khẩu</label>
+                                    <input id="password" name="password" type="password" class="form-control"
+                                           value="${USERMODEL.password}">
+                                </div>
+                                <h4 class="sub-title">Thông tin cá nhân</h4>
+                                <div class="form-group">
+                                    <label>SDT</label>
+                                    <input name="phoneNumber" id="phoneNumber" type="text" class="form-control" value="${USERMODEL.phoneNumber}">
+                                </div>
+                                <div class="form-group">
+                                    <label>Thành phố</label>
+                                    <input name="city" id="city" type="text" class="form-control" value="${USERMODEL.city}">
+                                    <%--                        <select class="form-control">--%>
+                                    <%--                            <option value="paris">Paris</option>--%>
+                                    <%--                            <option value="new york">New York</option>--%>
+                                    <%--                        </select>--%>
+                                </div>
+
+                                <div STYLE="width: 100%" class="row form-group">
+                                    <label>Địa chỉ chi tiết</label>
+                                    <input style="width: 100%" id="address" name="address" type="text"
+                                           class="form-control" value="${USERMODEL.address}">
+                                </div>
+                                <button id="registerBtn" class="btn signup">Cập nhật</button>
+                            </form>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Tên</label>
-                                <input type="text" class="form-control" value="${USERMODEL.lastName}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" value="${USERMODEL.lastName}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>SDT</label>
-                                <input type="text" class="form-control" value="${USERMODEL.phoneNumber}">
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="btn btn-primary">Cập nhật</button>
                     </div>
                 </div>
                 <!-- Đổi mật khẩu -->
@@ -124,9 +144,6 @@
                                 <input type="text" class="${USERMODEL.city}">
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <button class="btn btn-primary">Cập nhật</button>
                     </div>
                 </div>
                 <!-- Yêu thích -->

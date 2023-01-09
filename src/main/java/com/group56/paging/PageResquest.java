@@ -7,11 +7,23 @@ public class PageResquest implements Pageble {
     private Integer maxPageItem;
     private Sorter sorter;
 
+
+
+    private String searchName;
+
     public PageResquest(Integer page, Integer maxPageItem, Sorter sorter) {
         this.page = page;
         this.maxPageItem = maxPageItem;
         this.sorter = sorter;
     }
+
+    public PageResquest(Integer page, Integer maxPageItem, Sorter sorter,String searchName) {
+        this.page = page;
+        this.maxPageItem = maxPageItem;
+        this.sorter = sorter;
+        this.searchName = searchName;
+    }
+
 
     @Override
     public Integer getPage() {
@@ -38,4 +50,11 @@ public class PageResquest implements Pageble {
         }
         return null;
     }
+
+    @Override
+    public String getNameSearch() {
+        return this.searchName;
+    }
+
+
 }

@@ -20,4 +20,10 @@ public class ProductImageDAO extends AbstractDAO<ProductImageModel> implements I
         List<ProductImageModel> products = query(sql, new ProductImageMapper(), id);
         return products.isEmpty() ? null : products.get(0);
     }
+
+    @Override
+    public List<ProductImageModel> findByProduct(Long productId, int status) {
+        String sql = "Select * from images_product i INNER JOIN product AS p ON i.product_id = p.product_id WHERE i.`status` = ? AND p.product_id = ?;";
+        return query(sql, new ProductImageMapper(),status, productId);
+    }
 }

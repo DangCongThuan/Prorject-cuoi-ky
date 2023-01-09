@@ -90,8 +90,18 @@
             <div class="col-sm-3">
                 <div class="left-sidebar">
                     <%@include file="/commons/web/danhmuc.jsp" %>
-                    <%@include file="/commons/web/tintuc.jsp" %>
-                    <%@include file="/commons/web/quangcao.jsp"%>
+                    <div class="panel-group category-products" id="accordian2">
+                        <div class="price-range"><!--price-range-->
+                            <h2>phạm vi giá</h2>
+                            <div class="well">
+                                <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600"
+                                       data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br/>
+                                <b>0đ</b> <b class="pull-right">600.000đ</b>
+                            </div>
+                        </div><!--/price-range-->
+                    </div>
+                    <%--					Phần quảng cáo--%>
+                    <%--                    <%@include file="/commons/web/quangcao.jsp" %>--%>
                 </div>
             </div>
 

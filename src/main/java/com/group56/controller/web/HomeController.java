@@ -1,6 +1,7 @@
 package com.group56.controller.web;
 
 import com.group56.model.UserModel;
+import com.group56.service.ICategoryService;
 import com.group56.service.IUserService;
 import com.group56.utils.FormUtil;
 import com.group56.utils.MessageUtil;
@@ -20,6 +21,8 @@ import java.util.ResourceBundle;
 public class HomeController extends HttpServlet {
     @Inject
     private IUserService userService;
+    @Inject
+    private ICategoryService categoryService;
     ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
     //Phương thức doGET
     @Override
@@ -36,6 +39,7 @@ public class HomeController extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/views/web/login.jsp");
         }  else {
             RequestDispatcher rd = req.getRequestDispatcher("/views/web/home.jsp");
+            req.setAttribute("categories", categoryService.findAll());
             rd.forward(req, resp);
         }
     }
